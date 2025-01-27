@@ -62,10 +62,16 @@
 
   <script>
     const API_URL = 'https://8rmgl8117h.execute-api.us-east-2.amazonaws.com/random-tweet';
+    const tweetTextElem = document.getElementById('tweetText');
+    const tweetDateElem = document.getElementById('tweetDate');
+    const rtCountElem = document.getElementById('rtCount');
+    const favCountElem = document.getElementById('favCount');
+
     tweetTextElem.textContent = 'Loading...';
     tweetDateElem.textContent = '-';
     rtCountElem.textContent = '-';
     favCountElem.textContent = '-';
+
     document.getElementById('getTweetBtn').addEventListener('click', async () => {
       const tweetDisplay = document.getElementById('tweetDisplay');
       tweetDisplay.textContent = 'Loading...';
