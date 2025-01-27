@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Tweet Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h1 {
+      color: #333;
+    }
+    #tweetDisplay {
+      margin: 20px 0;
+      font-size: 18px;
+      color: #555;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background: #f7f7f7;
+      border-radius: 4px;
+      min-height: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Random Tweet Generator</h1>
+    <div id="tweetDisplay">Click the button to generate a random tweet!</div>
+    <button id="getTweetBtn">Get Random Tweet</button>
+  </div>
+
+  <script>
+    const API_URL = 'https://your-api-gateway-endpoint.amazonaws.com/'; // Replace with your API Gateway URL
+
+    document.getElementById('getTweetBtn').addEventListener('click', async () => {
+      const tweetDisplay = document.getElementById('tweetDisplay');
+      tweetDisplay.textContent = 'Loading...';
+
+      try {
+        const response = await fetch(API_URL, { method: 'GET' });
+        if (!response.ok) {
+          throw new Error('Failed to fetch a tweet.');
+        }
+        const data = await response.json();
+        tweetDisplay.textContent = data.randomTweet || 'No tweet received.';
+      } catch (error) {
+        console.error('Error fetching the tweet:', error);
+        tweetDisplay.textContent = 'An error occurred. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>
