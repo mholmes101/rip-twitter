@@ -68,7 +68,7 @@
           throw new Error('Failed to fetch a tweet.');
         }
         const data = await response.json();
-        tweetDisplay.textContent = data.randomTweet || 'No tweet received.';
+        tweetDisplay.textContent = data.text || 'No tweet received.';
       } catch (error) {
         console.error('Error fetching the tweet:', error);
         tweetDisplay.textContent = 'An error occurred. Please try again.';
