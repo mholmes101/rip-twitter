@@ -1,0 +1,66 @@
+/* Container styling */
+#tweetDisplay {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #e1e8ed; /* Classic Twitter border color */
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+/* Tweet text */
+#tweetText {
+font-size: 16px;
+color: #14171a; /* Twitter's default text color */
+margin-bottom: 12px;
+line-height: 1.6;
+}
+
+/* Date styling */
+#tweetDate {
+font-size: 12px;
+color: #657786; /* Lighter text color for metadata */
+margin-bottom: 8px;
+display: block;
+}
+
+/* Retweet and favorite count styling */
+#rtCount, #favCount {
+font-size: 13px;
+color: #657786;
+}
+
+/* Styling the details section */
+.tweet-details {
+    display: flex; /* Arrange elements horizontally */
+    justify-content: space-between; /* Spread them evenly */
+    font-size: 14px; /* Slightly smaller font */
+    color: #555; /* Subtle text color */
+  }
+
+/* Labels for retweets and favorites */
+#retweetLabel, #favoriteLabel {
+margin-right: 5px;
+font-weight: bold;
+}
+
+/* Buttons and layout */
+button {
+display: block;
+margin: 15px auto;
+padding: 8px 15px;
+background-color: #1da1f2; /* Twitter blue */
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 14px;
+cursor: pointer;
+text-transform: uppercase;
+}
+
+button:hover {
+background-color: #0d95e8; /* Slightly darker blue for hover */
+}
