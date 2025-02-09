@@ -19,8 +19,10 @@ document.getElementById("getTweetBtn").addEventListener("click", async () => {
   const likeCountElem = document.getElementById("likeCount");
   const tweetDisplay = document.getElementById("tweetDisplay");
   const loadDisplay = document.getElementById("loadDisplay");
+  const getTweetBtn = document.getElementById("getTweetBtn");
   loadDisplay.style.display = "block";
   tweetDisplay.style.display = "none";
+  getTweetBtn.style.display = "none";
 
   click_count++;
 
@@ -62,14 +64,12 @@ document.getElementById("getTweetBtn").addEventListener("click", async () => {
 
     loadDisplay.style.display = "none";
     tweetDisplay.style.display = "block";
+    getTweetBtn.style.display = "block";
 
     // Update the button text
     if (click_count === 9)
-      document.getElementById("getTweetBtn").textContent =
-        "Shurrup and give me another ya dosser";
-    else
-      document.getElementById("getTweetBtn").textContent =
-        button_text[click_count % 6];
+      getTweetBtn.textContent = "Shurrup and give me another ya dosser";
+    else getTweetBtn.textContent = button_text[click_count % 6];
   } catch (error) {
     console.error("Error fetching the tweet:", error);
     loadDisplay.textContent = `An error occurred: ${error.message}. Sorry lmao I'm still working out web dev just try again it'll probably work`;
