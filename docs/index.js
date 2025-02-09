@@ -7,24 +7,10 @@ const button_text = [
   "Gu on then one more",
   "Plz sir",
   "Gizit",
+  "tweet machine go brrrr",
 ];
 
 var click_count = 0;
-
-function showPartyPoppers() {
-  const container = document.getElementById("party-popper-container");
-  for (let i = 0; i < 5; i++) {
-    const popper = document.createElement("div");
-    popper.classList.add("popper");
-    popper.textContent = "🎉"; // Party popper emoji
-    popper.style.left = Math.random() * 100 + "vw"; // Random horizontal position
-    popper.style.animationDelay = Math.random() * 0.5 + "s"; // Random slight delay
-    container.appendChild(popper);
-
-    // Remove popper after animation ends
-    setTimeout(() => popper.remove(), 1000);
-  }
-}
 
 document.getElementById("getTweetBtn").addEventListener("click", async () => {
   const tweetTextElem = document.getElementById("tweetText");
@@ -33,21 +19,24 @@ document.getElementById("getTweetBtn").addEventListener("click", async () => {
   const likeCountElem = document.getElementById("likeCount");
   const tweetDisplay = document.getElementById("tweetDisplay");
   const loadDisplay = document.getElementById("loadDisplay");
-  loadDisplay.style.display = "flex";
+  loadDisplay.style.display = "block";
+  tweetDisplay.style.display = "none";
 
   click_count++;
 
   // Congratulate user after 5 clicks
   if (click_count === 5) {
-    alert(
-      "Bit bloody peckish for them tweets aren't ya pal? Hey, carry on pal, you enjoy em pal"
+    const firstModal = new bootstrap.Modal(
+      document.getElementById("firstModal")
     );
+    firstModal.show();
   }
   // Congratulate user after 5 clicks
   if (click_count === 9) {
-    alert(
-      "Alright greedy bollocks that's enough pack it in now you've had enough"
+    const secondModal = new bootstrap.Modal(
+      document.getElementById("secondModal")
     );
+    secondModal.show();
   }
   // Block user after 6 clicks
   if (click_count === 10) {
@@ -80,9 +69,9 @@ document.getElementById("getTweetBtn").addEventListener("click", async () => {
         "Shurrup and give me another ya dosser";
     else
       document.getElementById("getTweetBtn").textContent =
-        button_text[click_count % 5];
+        button_text[click_count % 6];
   } catch (error) {
     console.error("Error fetching the tweet:", error);
-    loadDisplay.textContent = `An error occurred: ${error.message}. Please try again.`;
+    loadDisplay.textContent = `An error occurred: ${error.message}. Sorry lmao I'm still working out web dev just try again it'll probably work`;
   }
 });

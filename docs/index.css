@@ -74,3 +74,30 @@ button {
 button:hover {
   background-color: #0d95e8; /* Slightly darker blue for hover */
 }
+
+.loading-gif {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  text-align: center;
+  color: fuchsia;
+}
+
+h3 {
+  text-align: center;
+  color: fuchsia;
+}
+
+.profile-pic img {
+  width: 50px; /* Set the size of the circular image */
+  height: 50px;
+  border-radius: 50%; /* Makes the image a circle */
+  object-fit: cover; /* Ensures the image fits nicely inside the circle */
+}
+
+.tweet-container {
+  padding: 15px;
+}
