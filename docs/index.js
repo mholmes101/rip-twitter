@@ -23,6 +23,7 @@ document.getElementById("getTweetBtn").addEventListener("click", async () => {
   loadDisplay.style.display = "block";
   tweetDisplay.style.display = "none";
   getTweetBtn.style.display = "none";
+  loadDisplay.textContent = "";
 
   click_count++;
 
