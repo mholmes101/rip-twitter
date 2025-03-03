@@ -81,14 +81,15 @@ button:hover {
   margin-right: auto;
 }
 
-h2 {
+.load-header {
   text-align: center;
   color: fuchsia;
 }
 
-h3 {
+.sub-head {
   text-align: center;
-  color: fuchsia;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
 .profile-pic img {
@@ -100,4 +101,11 @@ h3 {
 
 .tweet-container {
   padding: 15px;
+}
+
+.keysey {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 39%;
 }

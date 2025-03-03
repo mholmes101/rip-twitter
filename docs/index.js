@@ -41,11 +41,7 @@ document.getElementById("getTweetBtn").addEventListener("click", async () => {
     );
     secondModal.show();
   }
-  // Block user after 6 clicks
-  if (click_count === 10) {
-    document.body.innerHTML =
-      "<h1 style='color: red; text-align: center;'>THAT'S IT YOU'VE DONE IT NOW I'M GOING HOME AND IT'S MY BALL AND I'M TAKING IT WITH ME </h1>";
-  }
+
   try {
     const response = await fetch(API_URL, { method: "GET" });
     if (!response.ok) {
