@@ -20,10 +20,11 @@ document.getElementById("getTweetBtn").addEventListener("click", async () => {
   const tweetDisplay = document.getElementById("tweetDisplay");
   const loadDisplay = document.getElementById("loadDisplay");
   const getTweetBtn = document.getElementById("getTweetBtn");
+  const errorText = document.getElementById("errorText");
   loadDisplay.style.display = "block";
   tweetDisplay.style.display = "none";
   getTweetBtn.style.display = "none";
-  loadDisplay.textContent = "";
+  errorText.textContent = "";
 
   click_count++;
 
@@ -69,6 +70,6 @@ document.getElementById("getTweetBtn").addEventListener("click", async () => {
     else getTweetBtn.textContent = button_text[click_count % 6];
   } catch (error) {
     console.error("Error fetching the tweet:", error);
-    loadDisplay.textContent = `An error occurred: ${error.message}. Sorry lmao I'm still working out web dev just try again it'll probably work`;
+    errorText.textContent = `An error occurred: ${error.message}. Sorry lmao I'm still working out web dev just try again it'll probably work`;
   }
 });
