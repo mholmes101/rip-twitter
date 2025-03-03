@@ -86,11 +86,6 @@ button:hover {
   color: fuchsia;
 }
 
-.sub-head {
-  text-align: center;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
 
 .profile-pic img {
   width: 50px; /* Set the size of the circular image */
@@ -107,5 +102,5 @@ button:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 39%;
+  width: 80%
 }

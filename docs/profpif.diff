@@ -1,0 +1,72 @@
+diff --git a/docs/index.css b/docs/index.css
+index 22b37d6..220730a 100644
+--- a/docs/index.css
++++ b/docs/index.css
+@@ -90,3 +90,14 @@ h3 {
+   text-align: center;
+   color: fuchsia;
+ }
++
++.profile-pic img {
++  width: 50px; /* Set the size of the circular image */
++  height: 50px;
++  border-radius: 50%; /* Makes the image a circle */
++  object-fit: cover; /* Ensures the image fits nicely inside the circle */
++}
++
++.tweet-container {
++  padding: 15px;
++}
+diff --git a/docs/index.html b/docs/index.html
+index 04dd2ba..98f935c 100644
+--- a/docs/index.html
++++ b/docs/index.html
+@@ -59,7 +59,14 @@
+     </div>
+ 
+     <div id="tweetDisplay" style="display: none">
+-      <p id="tweetText"></p>
++      <div class="tweet-container d-flex align-items-start gap-3">
++        <div class="profile-pic">
++          <img src="assets/pp.jpeg" alt="randers profile pic" id="profilePic" />
++        </div>
++        <div class="tweet-content flex-grow-1">
++          <p id="tweetText"></p>
++        </div>
++      </div>
+       <div id="tweetDetails">
+         <div id="tweetDate">
+         </div>
+diff --git a/docs/index.js b/docs/index.js
+index 7d7f1e9..1a364db 100644
+--- a/docs/index.js
++++ b/docs/index.js
+@@ -44,17 +44,17 @@ document.getElementById("getTweetBtn").addEventListener("click", async () => {
+       "<h1 style='color: red; text-align: center;'>THAT'S IT YOU'VE DONE IT NOW I'M GOING HOME AND IT'S MY BALL AND I'M TAKING IT WITH ME </h1>";
+   }
+   try {
+-    const response = await fetch(API_URL, { method: "GET" });
+-    if (!response.ok) {
+-      throw new Error("Failed to fetch a tweet.");
+-    }
+-    const data = await response.json();
+-    // const data = {
+-    //   text: "I'm a cool tweet",
+-    //   date: "2022-01-01",
+-    //   rt_count: 100,
+-    //   like_count: 200,
+-    // };
++    // const response = await fetch(API_URL, { method: "GET" });
++    // if (!response.ok) {
++    //   throw new Error("Failed to fetch a tweet.");
++    // }
++    // const data = await response.json();
++    const data = {
++      text: "I'm a cool tweet",
++      date: "2022-01-01",
++      rt_count: 100,
++      like_count: 200,
++    };
+     tweetTextElem.textContent = data.text || "Couldn't gerrowt";
+     tweetDateElem.textContent = data.date || "Couldn't gerrowt";
+     rtCountElem.textContent = data.rt_count || "Couldn't gerrowt";
